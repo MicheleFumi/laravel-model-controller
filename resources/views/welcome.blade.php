@@ -1,3 +1,25 @@
+@php
+    function ratingStars($vote)
+    {
+        $roundedVote = round($vote);
+
+        $fullStar = '<i class="fa fa-star"></i>';
+        $empty = '<i class="fa fa-star-o"></i>';
+        $result = '';
+        for ($i = 1; $i <= $roundedVote; $i++) {
+            if ($i <= $roundedVote) {
+                $result .= $fullStar;
+            } else {
+                $result .= $empty;
+            }
+        }
+
+        return $result;
+    }
+
+@endphp
+
+
 <!doctype html>
 <html lang="en">
 
@@ -37,7 +59,8 @@
                                 <div class="card-vote mt-3">
 
                                     <p class="card-text text-muted">
-                                        {{--  {!! ratingStars($movie['vote']) !!} --}}
+                                        {!! ratingStars($movie['vote']) !!}
+
                                     </p>
                                 </div>
 
