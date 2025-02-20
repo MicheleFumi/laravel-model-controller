@@ -4,10 +4,10 @@
         $roundedVote = round($vote);
 
         $fullStar = '<i class="fa fa-star"></i>';
-        $empty = '<i class="fa fa-star-o"></i>';
+        $empty = '<i class="fa-regular fa-star"></i>';
         $result = '';
-        for ($i = 1; $i <= $roundedVote; $i++) {
-            if ($i <= $roundedVote) {
+        for ($i = 0; $i < 10; $i++) {
+            if ($i < $roundedVote) {
                 $result .= $fullStar;
             } else {
                 $result .= $empty;
@@ -19,7 +19,6 @@
 
 @endphp
 
-
 <!doctype html>
 <html lang="en">
 
@@ -29,7 +28,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     @vite(['resources/js/app.js'])
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -58,8 +59,8 @@
                                 </div>
                                 <div class="card-vote mt-3">
 
-                                    <p class="card-text text-muted">
-                                        {!! ratingStars($movie['vote']) !!}
+                                    <p class="card-text text-warning">
+                                        {!! ratingStars($movie['vote']) . ' ' . " ($movie[vote])" !!}
 
                                     </p>
                                 </div>
@@ -83,3 +84,4 @@
 </body>
 
 </html>
+<script></script>
