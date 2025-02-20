@@ -35,8 +35,12 @@
                                     <p class="card-text text-muted">({{ $movie['date'] }})</p>
                                 </div>
                                 <div class="card-vote mt-3">
-                                    <p class="card-text text-muted">({{ $movie['vote'] }})</p>
+
+                                    <p class="card-text text-muted">
+                                        {{--  {!! ratingStars($movie['vote']) !!} --}}
+                                    </p>
                                 </div>
+
                             </div>
                         </div>
                     </div>
